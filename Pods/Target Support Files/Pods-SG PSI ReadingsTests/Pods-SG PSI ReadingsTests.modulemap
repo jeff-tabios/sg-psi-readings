@@ -1,0 +1,6 @@
+framework module Pods_SG_PSI_ReadingsTests {
+  umbrella header "Pods-SG PSI ReadingsTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

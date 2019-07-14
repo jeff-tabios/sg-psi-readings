@@ -1,0 +1,24 @@
+PODS:
+  - Networking (5.0.0)
+  - Nimble (8.0.2)
+  - Quick (2.1.0)
+
+DEPENDENCIES:
+  - Networking (~> 5.0)
+  - Nimble (~> 8.0)
+  - Quick (~> 2.1)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Networking
+    - Nimble
+    - Quick
+
+SPEC CHECKSUMS:
+  Networking: 8ced5868ab2b5cf0fcc1d3657bf9bb589ae2fe91
+  Nimble: 622629381bda1dd5678162f21f1368cec7cbba60
+  Quick: 4be43f6634acfa727dd106bdf3929ce125ffa79d
+
+PODFILE CHECKSUM: a45dc66ea45372d8a29fa4f7765b2eb79f0cb692
+
+COCOAPODS: 1.5.3
