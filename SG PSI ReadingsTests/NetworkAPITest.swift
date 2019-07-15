@@ -15,55 +15,30 @@ import Networking
 class NetworkAPITest: XCTestCase {
     
     func test_mockRequest_returnsReading(){
-        
         let api = API()
         api.mockRequest("sample") { (reading) in
-            if reading != nil{
-                XCTAssert(true)
-            }else{
-                XCTAssert(false)
-            }
+            XCTAssertNotNil(reading)
         }
-        
     }
     
     func test_requestWithDateTime_returnsReading(){
         let api = API()
-        
-        let targetDateTime = "2019-07-13T12:00:00"
-        
-        api.liveRequest(dateTime: targetDateTime) { (reading,readingError) in
-            if reading != nil {
-                XCTAssert(true)
-            }else{
-                XCTAssert(false)
-            }
+        api.liveRequest(date: "2019-07-13T12:00:00") { (reading,readingError) in
+            XCTAssertNotNil(reading)
         }
     }
     
     func test_requestWithDate_returnsReading(){
         let api = API()
-        
-        let targetDateTime = "2019-07-13"
-        
-        api.liveRequest(date: targetDateTime) { (reading,readingError) in
-            if reading != nil {
-                XCTAssert(true)
-            }else{
-                XCTAssert(false)
-            }
+        api.liveRequest(date: "2019-07-13") { (reading,readingError) in
+            XCTAssertNotNil(reading)
         }
     }
     
     func test_requestWitouthDate_returnsReading(){
         let api = API()
-        
         api.liveRequest() { (reading,readingError) in
-            if reading != nil {
-                XCTAssert(true)
-            }else{
-                XCTAssert(false)
-            }
+            XCTAssertNotNil(reading)
         }
     }
     
