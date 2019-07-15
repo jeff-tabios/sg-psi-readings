@@ -14,31 +14,32 @@ import Networking
 
 class NetworkAPITest: XCTestCase {
     
+    let api = API()
+    
     func test_mockRequest_returnsReading(){
-        let api = API()
         api.mockRequest("sample") { (reading) in
-            XCTAssertNotNil(reading)
+            expect(reading).notTo(beNil())
         }
     }
     
     func test_requestWithDateTime_returnsReading(){
-        let api = API()
+        
         api.liveRequest(date: "2019-07-13T12:00:00") { (reading,readingError) in
-            XCTAssertNotNil(reading)
+            expect(reading).notTo(beNil())
         }
     }
     
     func test_requestWithDate_returnsReading(){
-        let api = API()
+        
         api.liveRequest(date: "2019-07-13") { (reading,readingError) in
-            XCTAssertNotNil(reading)
+            expect(reading).notTo(beNil())
         }
     }
     
     func test_requestWitouthDate_returnsReading(){
-        let api = API()
+        
         api.liveRequest() { (reading,readingError) in
-            XCTAssertNotNil(reading)
+            expect(reading).notTo(beNil())
         }
     }
     
