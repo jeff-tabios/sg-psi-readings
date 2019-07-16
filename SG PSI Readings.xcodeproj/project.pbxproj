@@ -12,6 +12,10 @@
 		620BEDA622DAF25F00BC6DAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 620BEDA422DAF25F00BC6DAF /* Main.storyboard */; };
 		620BEDA822DAF27300BC6DAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 620BEDA722DAF27300BC6DAF /* Assets.xcassets */; };
 		620BEDAB22DAF27300BC6DAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 620BEDA922DAF27300BC6DAF /* LaunchScreen.storyboard */; };
+		6288880C22DD64DA000F8217 /* PSIReadingAnnotationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6288880B22DD64DA000F8217 /* PSIReadingAnnotationTests.swift */; };
+		6288880E22DD65A3000F8217 /* PSIReadingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6288880D22DD65A3000F8217 /* PSIReadingsViewModel.swift */; };
+		6288881122DD663A000F8217 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6288881022DD663A000F8217 /* Annotation.swift */; };
+		6288881622DDAB7A000F8217 /* PropertyReflectable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6288881522DDAB7A000F8217 /* PropertyReflectable.swift */; };
 		62CD6A8A22DB799F0019AF06 /* GlobalConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CD6A8122DB799E0019AF06 /* GlobalConstants.swift */; };
 		62CD6A8D22DB799F0019AF06 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CD6A8722DB799E0019AF06 /* API.swift */; };
 		62CD6A8E22DB799F0019AF06 /* Reading.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62CD6A8922DB799F0019AF06 /* Reading.swift */; };
@@ -45,6 +49,10 @@
 		620BEDAC22DAF27300BC6DAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		620BEDB122DAF27300BC6DAF /* SG PSI ReadingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SG PSI ReadingsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		620BEDB722DAF27300BC6DAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6288880B22DD64DA000F8217 /* PSIReadingAnnotationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIReadingAnnotationTests.swift; sourceTree = "<group>"; };
+		6288880D22DD65A3000F8217 /* PSIReadingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIReadingsViewModel.swift; sourceTree = "<group>"; };
+		6288881022DD663A000F8217 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
+		6288881522DDAB7A000F8217 /* PropertyReflectable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyReflectable.swift; sourceTree = "<group>"; };
 		62CD6A8122DB799E0019AF06 /* GlobalConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalConstants.swift; sourceTree = "<group>"; };
 		62CD6A8722DB799E0019AF06 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		62CD6A8922DB799F0019AF06 /* Reading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reading.swift; sourceTree = "<group>"; };
@@ -115,6 +123,7 @@
 				62CD6A8422DB799E0019AF06 /* Views */,
 				62CD6A8222DB799E0019AF06 /* ViewModels */,
 				62CD6A9822DC48B60019AF06 /* Helpers */,
+				6288881422DD6983000F8217 /* Presentation */,
 				62CD6A8622DB799E0019AF06 /* Networking */,
 				62CD6A7C22DB5D750019AF06 /* Storyboards */,
 				62CD6A9122DB8C280019AF06 /* Mock */,
@@ -128,9 +137,18 @@
 			isa = PBXGroup;
 			children = (
 				62CD6A8F22DB79B20019AF06 /* NetworkAPITest.swift */,
+				6288880B22DD64DA000F8217 /* PSIReadingAnnotationTests.swift */,
 				620BEDB722DAF27300BC6DAF /* Info.plist */,
 			);
 			path = "SG PSI ReadingsTests";
+			sourceTree = "<group>";
+		};
+		6288881422DD6983000F8217 /* Presentation */ = {
+			isa = PBXGroup;
+			children = (
+				6288881022DD663A000F8217 /* Annotation.swift */,
+			);
+			path = Presentation;
 			sourceTree = "<group>";
 		};
 		62CD6A7C22DB5D750019AF06 /* Storyboards */ = {
@@ -145,6 +163,7 @@
 		62CD6A8222DB799E0019AF06 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				6288880D22DD65A3000F8217 /* PSIReadingsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -185,6 +204,7 @@
 			isa = PBXGroup;
 			children = (
 				62CD6A9B22DC622E0019AF06 /* StringExtension.swift */,
+				6288881522DDAB7A000F8217 /* PropertyReflectable.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -403,9 +423,12 @@
 			files = (
 				62CD6A8A22DB799F0019AF06 /* GlobalConstants.swift in Sources */,
 				62CD6A8E22DB799F0019AF06 /* Reading.swift in Sources */,
+				6288881622DDAB7A000F8217 /* PropertyReflectable.swift in Sources */,
+				6288880E22DD65A3000F8217 /* PSIReadingsViewModel.swift in Sources */,
 				62CD6A9C22DC622E0019AF06 /* StringExtension.swift in Sources */,
 				620BEDA122DAF25F00BC6DAF /* AppDelegate.swift in Sources */,
 				62CD6A8D22DB799F0019AF06 /* API.swift in Sources */,
+				6288881122DD663A000F8217 /* Annotation.swift in Sources */,
 				62CD6A9722DC34730019AF06 /* ReadingError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6288880C22DD64DA000F8217 /* PSIReadingAnnotationTests.swift in Sources */,
 				62CD6A9022DB79B30019AF06 /* NetworkAPITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
