@@ -12,6 +12,9 @@
 		620BEDA622DAF25F00BC6DAF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 620BEDA422DAF25F00BC6DAF /* Main.storyboard */; };
 		620BEDA822DAF27300BC6DAF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 620BEDA722DAF27300BC6DAF /* Assets.xcassets */; };
 		620BEDAB22DAF27300BC6DAF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 620BEDA922DAF27300BC6DAF /* LaunchScreen.storyboard */; };
+		6232611A22DDDE270070907E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6232611922DDDE270070907E /* SettingsViewController.swift */; };
+		6232611C22DDE10D0070907E /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6232611B22DDE10D0070907E /* DateExtension.swift */; };
+		624F3A1A22DDC3A5004B8892 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 624F3A1922DDC3A5004B8892 /* MapViewController.swift */; };
 		6288880C22DD64DA000F8217 /* PSIReadingAnnotationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6288880B22DD64DA000F8217 /* PSIReadingAnnotationTests.swift */; };
 		6288880E22DD65A3000F8217 /* PSIReadingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6288880D22DD65A3000F8217 /* PSIReadingsViewModel.swift */; };
 		6288881122DD663A000F8217 /* Annotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6288881022DD663A000F8217 /* Annotation.swift */; };
@@ -49,6 +52,9 @@
 		620BEDAC22DAF27300BC6DAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		620BEDB122DAF27300BC6DAF /* SG PSI ReadingsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SG PSI ReadingsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		620BEDB722DAF27300BC6DAF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6232611922DDDE270070907E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		6232611B22DDE10D0070907E /* DateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
+		624F3A1922DDC3A5004B8892 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		6288880B22DD64DA000F8217 /* PSIReadingAnnotationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIReadingAnnotationTests.swift; sourceTree = "<group>"; };
 		6288880D22DD65A3000F8217 /* PSIReadingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PSIReadingsViewModel.swift; sourceTree = "<group>"; };
 		6288881022DD663A000F8217 /* Annotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Annotation.swift; sourceTree = "<group>"; };
@@ -171,6 +177,8 @@
 		62CD6A8422DB799E0019AF06 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				624F3A1922DDC3A5004B8892 /* MapViewController.swift */,
+				6232611922DDDE270070907E /* SettingsViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -204,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				62CD6A9B22DC622E0019AF06 /* StringExtension.swift */,
+				6232611B22DDE10D0070907E /* DateExtension.swift */,
 				6288881522DDAB7A000F8217 /* PropertyReflectable.swift */,
 			);
 			path = Helpers;
@@ -422,10 +431,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				62CD6A8A22DB799F0019AF06 /* GlobalConstants.swift in Sources */,
+				6232611C22DDE10D0070907E /* DateExtension.swift in Sources */,
 				62CD6A8E22DB799F0019AF06 /* Reading.swift in Sources */,
+				6232611A22DDDE270070907E /* SettingsViewController.swift in Sources */,
 				6288881622DDAB7A000F8217 /* PropertyReflectable.swift in Sources */,
 				6288880E22DD65A3000F8217 /* PSIReadingsViewModel.swift in Sources */,
 				62CD6A9C22DC622E0019AF06 /* StringExtension.swift in Sources */,
+				624F3A1A22DDC3A5004B8892 /* MapViewController.swift in Sources */,
 				620BEDA122DAF25F00BC6DAF /* AppDelegate.swift in Sources */,
 				62CD6A8D22DB799F0019AF06 /* API.swift in Sources */,
 				6288881122DD663A000F8217 /* Annotation.swift in Sources */,
