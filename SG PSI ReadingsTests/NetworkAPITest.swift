@@ -23,15 +23,13 @@ class NetworkAPITest: XCTestCase {
     }
     
     func test_requestWithDateTime_returnsReading(){
-        
-        api.liveRequest(date: "2019-07-13T12:00:00") { (reading,readingError) in
+        api.liveRequest(params:["date_time": "2019-07-13T12:00:00"]) { (reading,readingError) in
             expect(reading).notTo(beNil())
         }
     }
     
     func test_requestWithDate_returnsReading(){
-        
-        api.liveRequest(date: "2019-07-13") { (reading,readingError) in
+        api.liveRequest(params:["date": "2019-07-14"]) { (reading,readingError) in
             expect(reading).notTo(beNil())
         }
     }
