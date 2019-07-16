@@ -11,25 +11,8 @@ import Networking
 
 class API{
     
-    func createParems(date:String?=nil) -> [String:String]{
-        
-        var params:[String:String] = [:]
-        
-        if let date = date {
-            if date.count == 10{
-                params["date"] = date
-            }else{
-                params["date_time"] = date
-            }
-        }
-        
-        return params
-    }
-    
-    func liveRequest(date:String? = nil,
+    func liveRequest(params:[String:String] = [:],
                      completion: @escaping (Reading?,ReadingError?)-> Void){
-        
-        let params = createParems(date: date)
         
         let networking = Networking(baseURL: NetworkConfig.baseUrl)
         networking.get(NetworkConfig.psiUrl,parameters: params) { (result) in
