@@ -9,12 +9,12 @@
 import Foundation
 import MapKit
 
-enum Regions{
-    case central
-    case north
-    case south
-    case east
-    case west
+enum Regions: String{
+    case central = "central"
+    case north = "north"
+    case south = "south"
+    case east = "east"
+    case west = "west"
 }
 
 protocol ReadingProtocol{
@@ -42,11 +42,11 @@ class PSIReadingViewModel: ReadingProtocol{
         
         var annotations:[MKPointAnnotation?] = []
         
-        annotations.append(createAnnotation(regionName: "central"))
-        annotations.append(createAnnotation(regionName: "north"))
-        annotations.append(createAnnotation(regionName: "south"))
-        annotations.append(createAnnotation(regionName: "west"))
-        annotations.append(createAnnotation(regionName: "east"))
+        annotations.append(createAnnotation(regionName: Regions.central.rawValue))
+        annotations.append(createAnnotation(regionName: Regions.north.rawValue))
+        annotations.append(createAnnotation(regionName: Regions.south.rawValue))
+        annotations.append(createAnnotation(regionName: Regions.east.rawValue))
+        annotations.append(createAnnotation(regionName: Regions.west.rawValue))
         
         return annotations
         
@@ -56,20 +56,23 @@ class PSIReadingViewModel: ReadingProtocol{
         if let reading = self.reading {
             
             //Details
-            let title = regionName
-            let subtitle = reading.items[0].readings["psi_twenty_four_hourly"]?[regionName]
-            let latitude = reading.regionMetadata.filter{$0.name == regionName}[0].labelLocation.latitude
-            let longitude = reading.regionMetadata.filter{$0.name == regionName}[0].labelLocation.longitude
-            let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
-            let readingText = reading.items[0].readings.map{"\($0.key): \($0.value[regionName] ?? "")"}.joined(separator: "\n")
-            
-            //Create
-            let regionAnnotation = RegionAnnotation(title: title,
-                                                    subtitle: "Level: \(subtitle)",
-                                           coordinate: coordinate,
-                                           readingText: readingText)
-            
-            return regionAnnotation.createAnnotation()
+            if let subtitle = reading.items[0].readings["psi_twenty_four_hourly"]?[regionName] {
+                let title = regionName
+                let latitude = reading.regionMetadata.filter{$0.name == regionName}[0].labelLocation.latitude
+                let longitude = reading.regionMetadata.filter{$0.name == regionName}[0].labelLocation.longitude
+                let coordinate = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
+                let readingText = reading.items[0].readings.map{"\($0.key): \($0.value[regionName] ?? "")"}.joined(separator: "\n")
+                
+                //Create
+                let regionAnnotation = RegionAnnotation(
+                    title: "\(title.capitalized)\nLevel: \(subtitle)",
+                    subtitle: "Level: \(subtitle)",
+                    coordinate: coordinate,
+                    readingText: readingText)
+                
+                return regionAnnotation.createAnnotation()
+            }
+           
         }
         
         return nil
