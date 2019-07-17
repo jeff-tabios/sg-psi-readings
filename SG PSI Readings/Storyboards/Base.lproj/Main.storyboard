@@ -24,11 +24,33 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="vYe-IL-HCI"/>
                                 </connections>
                             </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HeO-ve-kQb">
+                                <rect key="frame" x="20" y="772" width="374" height="50"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please wait..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slD-O9-5fX">
+                                        <rect key="frame" x="10" y="15" width="354" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="slD-O9-5fX" secondAttribute="bottom" constant="14" id="FtK-lB-Q3O"/>
+                                    <constraint firstAttribute="height" constant="50" id="WTV-Za-Jqm"/>
+                                    <constraint firstItem="slD-O9-5fX" firstAttribute="top" secondItem="HeO-ve-kQb" secondAttribute="top" constant="15" id="iGS-t3-Xsi"/>
+                                    <constraint firstItem="slD-O9-5fX" firstAttribute="leading" secondItem="HeO-ve-kQb" secondAttribute="leading" constant="10" id="vqs-qf-BBR"/>
+                                    <constraint firstAttribute="trailing" secondItem="slD-O9-5fX" secondAttribute="trailing" constant="10" id="wbm-Sq-egN"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ebv-Ge-Gi0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="4bR-uO-7ls"/>
                             <constraint firstItem="ebv-Ge-Gi0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Kvn-ET-rYP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="HeO-ve-kQb" secondAttribute="bottom" constant="40" id="LmO-bT-GzO"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HeO-ve-kQb" secondAttribute="trailing" constant="20" id="Pc7-2v-SR0"/>
+                            <constraint firstItem="HeO-ve-kQb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="kYH-ne-BHa"/>
                             <constraint firstItem="ebv-Ge-Gi0" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="sad-ZN-HSr"/>
                             <constraint firstItem="ebv-Ge-Gi0" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="x3M-RO-Fo7"/>
                         </constraints>
@@ -36,12 +58,14 @@
                     </view>
                     <navigationItem key="navigationItem" title="SG PSI Readings" id="PVM-cA-WgA">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="sYv-ov-hn7">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
-                                <segue destination="W4G-Wy-CJS" kind="presentation" id="c8C-5U-DIB"/>
+                                <segue destination="W4G-Wy-CJS" kind="showDetail" id="c8C-5U-DIB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="dateLabel" destination="slD-O9-5fX" id="Su7-YU-Sns"/>
                         <outlet property="mapView" destination="ebv-Ge-Gi0" id="dTj-8Q-qV0"/>
                     </connections>
                 </viewController>
@@ -67,7 +91,7 @@
                                 </date>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Set date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkU-P9-0fA">
-                                <rect key="frame" x="166" y="46" width="83" height="28"/>
+                                <rect key="frame" x="165.5" y="38" width="83" height="28"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -112,6 +136,13 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zrt-sS-90b">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.0" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -123,4 +154,5 @@
             <point key="canvasLocation" x="91" y="123"/>
         </scene>
     </scenes>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>
