@@ -23,7 +23,7 @@ class SettingsViewController: UIViewController{
     }
     
     @IBAction func refresh(_ sender: Any) {
-        if(dtPicker.date <= Date() ){
+        if dtPicker.date <= Date() {
             delegate?.refreshFromSettings(date: dtPicker.date.toString())
             dismiss(animated: true, completion: nil)
             
