@@ -23,11 +23,7 @@ class MapViewController: UIViewController, SettingsProtocol{
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshReadings()
-        dateView.layer.cornerRadius = 4
-        dateView.layer.shadowColor = UIColor.black.cgColor
-        dateView.layer.shadowOffset = CGSize(width: 0, height: 1.0)
-        dateView.layer.shadowOpacity = 0.2
-        dateView.layer.shadowRadius = 4.0
+        addDateViewShadow()
     }
     
     func refreshReadings(){
@@ -53,14 +49,6 @@ class MapViewController: UIViewController, SettingsProtocol{
         }
     }
     
-    func showDate(date: String){
-        var displayDate = date
-        if displayDate.isEmpty {
-            displayDate = Date().toStr()
-        }
-        dateLabel.text = displayDate
-    }
-    
     func refreshFromSettings(date: String) {
         if date.count == 10{
             params = ["date":date]
@@ -80,6 +68,22 @@ class MapViewController: UIViewController, SettingsProtocol{
         
         dialogMessage.addAction(refresh)
         self.present(dialogMessage, animated: true, completion: nil)
+    }
+    
+    func showDate(date: String){
+        var displayDate = date
+        if displayDate.isEmpty {
+            displayDate = Date().toStr()
+        }
+        dateLabel.text = displayDate
+    }
+    
+    func addDateViewShadow(){
+        dateView.layer.cornerRadius = 4
+        dateView.layer.shadowColor = UIColor.black.cgColor
+        dateView.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        dateView.layer.shadowOpacity = 0.2
+        dateView.layer.shadowRadius = 4.0
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
