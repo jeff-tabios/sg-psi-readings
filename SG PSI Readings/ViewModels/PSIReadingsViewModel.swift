@@ -26,7 +26,7 @@ protocol ReadingProtocol{
 class PSIReadingViewModel: ReadingProtocol{
     
     let api = API()
-    var reading: Reading?
+    var reading: Reading?=nil
     
     func requestReading(params:[String:String] = [:], completion: @escaping()-> Void) {
         api.liveRequest(params:params) { (reading,readingError) in
@@ -34,6 +34,9 @@ class PSIReadingViewModel: ReadingProtocol{
                 self.reading = reading
                 completion()
                 return
+            }else{
+                self.reading=nil
+                completion()
             }
         }
     }
