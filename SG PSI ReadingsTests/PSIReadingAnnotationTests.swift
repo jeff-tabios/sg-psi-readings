@@ -17,9 +17,9 @@ class PSIReadingAnnotationTests: XCTestCase {
     let PSIReadingVM = PSIReadingViewModel()
     
     func test_createAnnotations_returns5RegionAnnotations(){
-        PSIReadingVM.requestReading(){
-            if self.PSIReadingVM.reading != nil {
-                let annotations = self.PSIReadingVM.createAnnotations()
+        PSIReadingVM.requestReading(){ [weak self] in
+            if self?.PSIReadingVM.reading != nil {
+                let annotations = self?.PSIReadingVM.createAnnotations()
                  expect(annotations).to(haveCount(5))
             }
         }
