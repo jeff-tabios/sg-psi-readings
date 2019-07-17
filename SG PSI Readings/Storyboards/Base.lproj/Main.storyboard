@@ -66,6 +66,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="dateLabel" destination="slD-O9-5fX" id="Su7-YU-Sns"/>
+                        <outlet property="dateView" destination="HeO-ve-kQb" id="ajB-NG-Ppz"/>
                         <outlet property="mapView" destination="ebv-Ge-Gi0" id="dTj-8Q-qV0"/>
                     </connections>
                 </viewController>

@@ -14,6 +14,7 @@ class MapViewController: UIViewController, SettingsProtocol{
     
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var dateView: UIView!
     var annotations:[MKPointAnnotation?] = []
     var params:[String:String] = [:]
     let vm = PSIReadingViewModel()
@@ -22,6 +23,11 @@ class MapViewController: UIViewController, SettingsProtocol{
     override func viewDidLoad() {
         super.viewDidLoad()
         refreshReadings()
+        dateView.layer.cornerRadius = 4
+        dateView.layer.shadowColor = UIColor.black.cgColor
+        dateView.layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        dateView.layer.shadowOpacity = 0.2
+        dateView.layer.shadowRadius = 4.0
     }
     
     func refreshReadings(){
