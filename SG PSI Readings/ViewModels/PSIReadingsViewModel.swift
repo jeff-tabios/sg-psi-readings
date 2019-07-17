@@ -17,6 +17,8 @@ enum Regions: String{
     case west = "west"
 }
 
+extension Regions: CaseIterable {}
+
 protocol ReadingProtocol{
     func requestReading(params:[String:String],completion: @escaping()-> Void)
     func createAnnotations() -> [MKPointAnnotation?]
@@ -29,13 +31,12 @@ class PSIReadingViewModel: ReadingProtocol{
     var reading: Reading?=nil
     
     func requestReading(params:[String:String] = [:], completion: @escaping()-> Void) {
-        api.liveRequest(params:params) { (reading,readingError) in
+        api.liveRequest(params:params) { [weak self] (reading,readingError) in
             if let reading = reading {
-                self.reading = reading
+                self?.reading = reading
                 completion()
-                return
             }else{
-                self.reading=nil
+                self?.reading=nil
                 completion()
             }
         }
@@ -45,11 +46,9 @@ class PSIReadingViewModel: ReadingProtocol{
         
         var annotations:[MKPointAnnotation?] = []
         
-        annotations.append(createAnnotation(regionName: Regions.central.rawValue))
-        annotations.append(createAnnotation(regionName: Regions.north.rawValue))
-        annotations.append(createAnnotation(regionName: Regions.south.rawValue))
-        annotations.append(createAnnotation(regionName: Regions.east.rawValue))
-        annotations.append(createAnnotation(regionName: Regions.west.rawValue))
+        Regions.allCases.forEach {
+            annotations.append(createAnnotation(regionName: $0.rawValue))
+        }
         
         return annotations
         
