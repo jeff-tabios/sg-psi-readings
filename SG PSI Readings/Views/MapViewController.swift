@@ -75,7 +75,7 @@ class MapViewController: UIViewController, SettingsProtocol{
         if displayDate.isEmpty {
             displayDate = Date().toStr()
         }
-        dateLabel.text = displayDate
+        dateLabel.text = displayDate.replacingOccurrences(of: "T", with: " ")
     }
     
     func addDateViewShadow(){
