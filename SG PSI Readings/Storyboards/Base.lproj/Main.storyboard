@@ -57,7 +57,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" title="SG PSI Readings" id="PVM-cA-WgA">
-                        <barButtonItem key="rightBarButtonItem" title="Settings" id="sYv-ov-hn7">
+                        <barButtonItem key="rightBarButtonItem" title="Set" id="sYv-ov-hn7">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
                                 <segue destination="W4G-Wy-CJS" kind="showDetail" id="c8C-5U-DIB"/>
